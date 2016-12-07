@@ -13,19 +13,18 @@ from base.models import UUIDModel, TimeStampedUUIDModel
 from company.models import company
 
 
-
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
     is_active = models.BooleanField(_('active'), default=True)
-    # is_employee tells whether the user is a employee or client.
+    # is_staff tells whether the user is a employee or client.
     # True is for employee and False is for client.
     is_staff = models.BooleanField(_('staff'), default=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
     phone_number = PhoneNumberField(null=True, blank=True)
     date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
-
+    company = models.ForeignKey(company, null= True, blank=True)
     objects = UserManager()
 
     USERNAME_FIELD = 'email'

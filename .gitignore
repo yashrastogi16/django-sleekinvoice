@@ -10,6 +10,7 @@ __pycache__/
 settings.py
 
 # db.sqlite
+db.sqlite3
 
 # Migrations of all apps
 *migrations/

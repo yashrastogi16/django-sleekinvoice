@@ -15,4 +15,3 @@ class CompanyAdmin(admin.ModelAdmin):
     list_display = ['company_name','created', 'modified']
     readonly_fields = ('created', 'modified')
 
-admin.site.register(company, CompanyAdmin)

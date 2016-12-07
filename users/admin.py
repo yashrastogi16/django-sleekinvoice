@@ -8,7 +8,7 @@ class UserAdmin(admin.ModelAdmin):
     model = User
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name', 'avatar')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'avatar', 'company')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
                                     'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
@@ -22,6 +22,6 @@ class UserAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('date_joined', 'last_login')
 
-admin.site.register(User, UserAdmin)
+
    
-# Register your models here.
+

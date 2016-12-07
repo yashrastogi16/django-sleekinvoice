@@ -20,4 +20,5 @@ from base.admin import admin_site
 urlpatterns = [
     # Site Manager
     url(r'^admin/', admin_site.urls),
+    
     ]
